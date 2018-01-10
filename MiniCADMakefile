@@ -1,0 +1,8 @@
+build:
+	javac *.java
+
+clean:
+	$(RM) *.class && $(RM) *.rgba && $(RM) *.png
+
+run:
+	java Main

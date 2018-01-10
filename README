@@ -1,0 +1,44 @@
+== TEMA 2 - POO - RAZVAN RADOI - 321 CA ==
+
+Generalitati:
+
+Tema a fost implementata folosind urmatoarele patternuri:
+- singleton
+- factory
+- visitor
+
+Detalii de implementare:
+
+Se citeste inputul dat
+Folosind un shape factory singleton, conform descrierii fiecarei imagini,
+se creeaza o forma geometrica ce isi contine propriul descriptor
+
+Dupa ce se citesc toate formele geometrice se initializeaza imaginea de output
+la dimensiunile canvasului si folosind pattern-ul de visitor fiecare figura
+geometrica este visitata si desenata, apoi colorata daca este cazul
+
+Detalii despre visitor:
+
+Folosind double dispatch, pentru fiecare forma geometrica visitorul determina
+parametrii speicifici fiecarei forme geometrice. Conform acestora, el desenaza
+mai intai conturul fiecarei forme geometrice, iar mai apoi coloreaza
+interiorul figurii. Colorarea figurii se face in unele cazuri folosind floodfill
+(de exemplu la cerc), dar la anumite figuri geometrice cum sunt canvas, square
+si rectangle, nu e nevoie de flood fill asa ca se coloreaza pixel cu pixel
+interiorul imaginii.
+
+Detalii despre formele geometrice:
+Fiecare forma geometrica mosteneste clasa geometric shape
+geometric shape implementeaza clasele visitable si shape
+(aveam nevoie ca toate figurile sa fie visitable si ca toate sa aiba
+un getter si setter pentru descriptor, iar asta a parut cea mai usoara
+solutie, ca sa nu mai scriu metodele de get si set in fiecare clasa)
+
+Detalii despre visitor:
+Evident ca o clasa de 500 de linii putea fi modularizata. Am ales sa ma
+opresc din "refacerea" claselor intrucat avem f multe assignemnturi si sper
+ca nu e prea greu de citit codul :)
+in sine, visitor are o metoda pentru visitat fiecare forma geometrica
+si inca cateva metode pentru desenat linii, cercuri si pentru facut flood fill
+
+PS: give good grade, pls.
